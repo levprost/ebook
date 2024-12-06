@@ -43,7 +43,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit( User $user)
+    public function edit(User $user)
     {
         return view('user.edit', compact('user'));
     }
@@ -65,7 +65,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy( User $user)
+    public function destroy(User $user)
     {
         if (Auth::user()->id == $user->id) { 
             $user->delete(); 

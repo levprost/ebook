@@ -19,7 +19,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Nom</th>
-                                    <th scope="col">Description</th>
+                                    <th scope="col">discription</th>
                                     <th scope="col">Prix</th>
                                     <th scope="col">Quantité</th>
                                     <th scope="col">Action</th>
@@ -29,10 +29,10 @@
                                 @foreach($books as $book)
                                 <tr>
                                     <td>{{$book->title}}</td>
-                                    <td>{{$book->description}}</td>
+                                    <td>{{$book->discription}}</td>
                                     <td>{{$book->sumary}}</td>
                                     <td>{{$book->q}}</td>
-                                    @if($produit->image)
+                                    @if($book->image)
                                     <td>
                                         <img src="/storage/uploads/{{$book->image}}" alt="" width="100">
                                     </td>

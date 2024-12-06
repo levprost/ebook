@@ -38,7 +38,7 @@
                     <!-- Right Side Of Navbar -->
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         {{-- Ligne à ajouter --}}
-                        <a href="{{ route('users.edit', $user = Auth::user()) }}">Mon compte</a>
+                       §
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault(); 
                                     document.getElementById('logout-form').submit();">
