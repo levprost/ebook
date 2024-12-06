@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('role')->default('user');
 
-            $table->foreignId('contact_id')->default(1)->constrained();
+           
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
