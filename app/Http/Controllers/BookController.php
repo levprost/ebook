@@ -12,6 +12,14 @@ class BookController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function indexByCategory($categoryId)
+    {
+        // Получить категорию с постами
+        $category = Category::with('books')->findOrFail($categoryId);
+
+        // Передать данные в шаблон
+        return view('books.one', compact('category'));
+    }
     public function index()
     {
         $books = Book::all();
@@ -128,7 +136,7 @@ class BookController extends Controller
     $book->update($validatedData);
 
     // Перенаправление с сообщением об успехе
-    return redirect()->route('books.index')->with('success', 'Книга успешно обновлена!');
+    return redirect()->route('books.index')->with('success', 'Livre a bien été modifié!');
 }
 
     /**

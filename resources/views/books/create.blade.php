@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+@if(Auth::user() && Auth::user()->role === 'admin')
 <div class="container py-5">
     <div class="row">
         <div class="col-lg-7 mx-auto">
@@ -62,4 +63,7 @@
             </div>
         </div>
     </div>
-    @endsection
+@else
+     <h1 class="m-3"><strong>Vous n'êtes pas un administrateur</strong></h1>
+@endif
+@endsection

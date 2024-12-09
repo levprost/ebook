@@ -45,14 +45,20 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        if (Auth::user()->id == $user->id) {
         return view('user.edit', compact('user'));
+        }else{
+            return redirect('books')->withErrors(['erreur' => 'Modification du compte impossible']);
+        }
     }
+
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, User $user)
     {
+        if (Auth::user()->id == $user->id) {
         $request->validate([ 
             'name' => 'required|max:40',  
           ]); 
@@ -60,6 +66,9 @@ class UserController extends Controller
           $user->update($request->all()); 
      
           return back()->with('message', 'Le compte a bien été modifié.'); 
+        }else { 
+            return redirect()->back()->withErrors(['erreur' => 'Suppression du compte impossible']);
+        }
     }
 
     /**

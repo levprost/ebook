@@ -1,7 +1,7 @@
-@extends ('layouts/app')
+@extends ('layout')
 
 @section('title')
-eBooK - Mon compte
+Réseau Social Laravel - Mon compte
 @endsection
 
 @section('content')
@@ -18,7 +18,7 @@ eBooK - Mon compte
             @method('PUT')
 
             <div class="form-group">
-                <label for="name">Nouveau nom</label>
+                <label for="name">Nouveau Nom</label>
                 <input required type="text" class="form-control" placeholder="modifier" name="name"
                     value="{{ $user->name }}" id="name">
             </div>
